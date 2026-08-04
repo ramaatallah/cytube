@@ -1,0 +1,28 @@
+name: cytube-lab
+
+topology:
+  nodes:
+    cytube-server:
+      kind: linux
+      image: cytube-app:latest
+    router1:
+      kind: linux
+      image: alpine:latest
+
+    router2:
+      kind: linux
+      image: alpine:latest
+
+    client1:
+      kind: linux
+      image: alpine:latest
+
+    client2:
+      kind: linux
+      image: alpine:latest
+
+  links:
+    - endpoints: ["client1:eth1", "router1:eth1"]
+    - endpoints: ["client2:eth1", "router1:eth2"]
+    - endpoints: ["router1:eth3", "router2:eth1"]
+    - endpoints: ["router2:eth2", "cytube-server:eth1"]
