@@ -64,7 +64,16 @@ The project was developed as part of a Network Programming course to demonstrate
 ## Project Structure
 
 ```
-<img width="416" height="465" alt="Screenshot (592)" src="https://github.com/user-attachments/assets/747e2c02-1502-4799-bd6d-45e3d3ffc206" />
+cytube-network-lab/
+│
+├── topology.yml
+├── config.yaml
+├── docker-compose.yml
+├── scripts/
+├── documentation/
+├── screenshots/
+├── README.md
+└── report.pdf
 
 
 ```
@@ -257,6 +266,7 @@ bcd38b9d6ae1   alpine:latest       "/bin/sh"                7 days ago     Up 18
 b7d44d8490c9   alpine:latest       "/bin/sh"                7 days ago     Up 18 minutes                                                                                        clab-cytube-lab-router2
 494bc04beb4e   finalproject-app    "docker-entrypoint.s…"   2 months ago   Up 18 minutes   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp                                           finalproject-app-1
 ```
+</details>
 ---
 ##
 - CyTube homepage
