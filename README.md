@@ -1,5 +1,12 @@
 # CyTube Deployment using Containerlab, Docker, MariaDB, zrok, and Proxmox
 
+![Platform](https://img.shields.io/badge/Platform-Ubuntu-orange)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
+![Containerlab](https://img.shields.io/badge/Containerlab-Network-green)
+![Database](https://img.shields.io/badge/Database-MariaDB-red)
+![Tunnel](https://img.shields.io/badge/zrok-Public%20Access-purple)
+
+
 ## Project Description
 
 This project demonstrates the deployment of the open-source **CyTube** collaborative media platform inside a virtual networking environment.
@@ -60,7 +67,30 @@ The project was developed as part of a Network Programming course to demonstrate
 ```
 
 ---
+## Prerequisites
 
+Before deploying the project, make sure the following software is installed and configured:
+
+- Ubuntu 22.04 LTS (or later)
+- Docker Engine
+- Containerlab
+- Git
+- Node.js (required by CyTube)
+- MariaDB
+- zrok CLI
+- Proxmox VE (optional, for virtualized deployment)
+
+Verify the installation using:
+
+```bash
+docker --version
+containerlab version
+git --version
+node -v
+npm -v
+mysql --version
+zrok version
+```
 ## Project Structure
 
 ```
@@ -200,7 +230,36 @@ Users can:
 - Manage playlists
 
 ---
+## Project Verification
 
+The following commands were used to verify the successful deployment.
+
+### Running Containers
+
+```bash
+docker ps
+```
+
+### Containerlab Status
+
+```bash
+sudo containerlab inspect -t lab.yml
+```
+
+### Database
+
+```sql
+SHOW TABLES;
+SELECT * FROM users;
+SELECT * FROM channels;
+```
+
+### zrok
+
+```bash
+zrok status
+zrok overview
+```
 ## Deploying on Proxmox
 
 1. Create a new Ubuntu VM.
@@ -217,7 +276,8 @@ Users can:
 ## Screenshots
 
 Add screenshots of:
-
+- Proxmox
+  <img width="1920" height="1017" alt="Screenshot (583)" src="https://github.com/user-attachments/assets/8f2c774c-1ff3-4cda-830b-6aeebc9a4344" />
 - Containerlab topology
   <div align="center">
 
@@ -275,11 +335,16 @@ b7d44d8490c9   alpine:latest       "/bin/sh"                7 days ago     Up 18
  <img width="1341" height="115" alt="Screenshot (598)" src="https://github.com/user-attachments/assets/e1c1d27e-4789-4131-b1c7-0ce7f9fe0387" />
  <img width="1920" height="1035" alt="Screenshot (597)" src="https://github.com/user-attachments/assets/ac22ffc3-a5e4-4770-b6f4-5914e46cac41" />
  <img width="1920" height="1031" alt="Screenshot (596)" src="https://github.com/user-attachments/assets/02c6ef0d-3d38-470e-b658-156595dec9b1" />
-- Proxmox
-  <img width="1920" height="1017" alt="Screenshot (583)" src="https://github.com/user-attachments/assets/8f2c774c-1ff3-4cda-830b-6aeebc9a4344" />
+
+
 ---
 
 ## Future Improvements
+
+- Deploy the project on a public cloud server instead of a local virtual machine.
+- Configure HTTPS with SSL certificates for secure communication.
+- Automate deployment using Docker Compose.
+- Improve system scalability to support more concurrent users.
 
 
 
