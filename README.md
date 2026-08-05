@@ -281,12 +281,7 @@ b7d44d8490c9   alpine:latest       "/bin/sh"                7 days ago     Up 18
 
 ## Future Improvements
 
-- HTTPS with Nginx Reverse Proxy
-- Automatic Docker Compose deployment
-- Kubernetes deployment
-- CI/CD using GitHub Actions
-- Monitoring with Prometheus and Grafana
-- Cloud deployment on AWS or Azure
+
 
 ---
 
